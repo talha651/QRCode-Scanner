@@ -6,9 +6,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+  Scan Your QR-Code
+  <ion-content padding>
+    <ion-input type="text" placeholder="My Qr data" [(ngModel)]="qrdata"   ></ion-input>
+    <button ion-button color="secondary" round (click)="generate()" name="barcode">Generate</button>
+    <button ion-button color="secondary" round (click)="scan()" name="qr-scanner">Scan</button>
+
+    <ion-card *ngIf="createdcode">
+      <ngx-qrcode [qrc-value]="createdcode"></ngx-qrcode> 
+      <ion-card-content>
+        <ion-row>Value : {{ createdcode }} 
+      </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card *ngIf="scannedcode">
+    <ion-card-content>
+      result from scan : {{scannedcode}}
+    </ion-card-content>
+  </ion-card>
+  </ion-content>

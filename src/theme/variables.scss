@@ -53,7 +53,12 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+ion-card{
+  display: flex;
+  flex-direction: column;
+  width: 50% !important;
+  margin: 0 !important;
+}
 
 
 // App Windows Variables
